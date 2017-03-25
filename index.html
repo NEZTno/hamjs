@@ -5,10 +5,10 @@
         <title></title>
     </head>
         <div class="app">
-            <div class="pig"></div>
-            <div class="pig"></div>
-            <div class="pig"></div>
-            <div class="pig"></div>
+            <div class="pig">Hello</div>
+            <div class="pig">World</div>
+            <div class="pig">ham</div>
+            <div class="pig">js</div>
         </div>
     <body>
         <script src="ham.js"></script>
@@ -20,6 +20,11 @@
             test.cook();
             test.hunt('.pig');
             test.cook().cook().eat().eat();
+            test.hidePigs('.pig');
+            test.showPigs('.pig');
+            test.piggyBath('.pig');
+            test.throwDirt('.pig', 'Hello World');
+            test.throwDirt('.pig');
         </script>
     </body>
 </html>
