@@ -6,20 +6,20 @@
     }
 
     var Library = function(parameter){
+        this.pigs = [];
+        this.cookedHam = 0;
         const elements = document.querySelectorAll(parameter);
         console.log("Garry found " + elements.length + " pig(s)");
         for(var i=0;i<elements.length;i++)
-            console.log(elements[i]);
-        this.pigs = elements.length;
-        this.cookedHam = 0;
+            this.pigs.push(elements[i]);
         return this;
     }
 
     Library.prototype = {
         cook: function(){
-            if(this.pigs > 0){
+            if(this.pigs.length > 0){
                 this.cookedHam += 1;
-                this.pigs -= 1;
+                this.pigs.pop();
                 console.log("Garry makes cooked ham");
             }else{
                 console.log("Garry dont have any pigs");
@@ -39,30 +39,27 @@
             const hunting = document.querySelectorAll(parameter);
             console.log("Garry slaugthered " + hunting.length + " pig(s)");
             for(var i=0;i<hunting.length;i++)
-                console.log(hunting[i]);
-            this.pigs += hunting.length;
+                this.pigs.push(hunting[i]);
             return this;
         },
-        hidePigs: function(parameter){
-            const pigs = document.querySelectorAll(parameter);
+        hidePigs: function(){
             console.log("Garry hides his pigs");
-            for (var i = 0; i < pigs.length; i++) {
-                pigs[i].style.display = 'none';
+            for (var i = 0; i < this.pigs.length; i++) {
+                this.pigs[i].style.display = 'none';
             }
             return this;
         },
-        showPigs: function(parameter){
-            const pigs = document.querySelectorAll(parameter);
+        showPigs: function(){
             console.log("Garry shows his pigs");
-            for (var i = 0; i < pigs.length; i++) {
-                pigs[i].style.display = 'block';
+            for (var i = 0; i < this.pigs.length; i++) {
+                console.log(this.pigs[i])
+                this.pigs[i].style.display = 'block';
             }
         },
-        piggyBath: function(parameter){
-            const pigs = document.querySelectorAll(parameter);
+        piggyBath: function(){
             console.log("Garry gives his pigs a nice bath");
-            for (var i = 0; i < pigs.length; i++) {
-                pigs[i].innerHTML = "";
+            for (var i = 0; i < this.pigs.length; i++) {
+                this.pigs[i].innerHTML = "";
             }
         },
         throwDirt: function(parameter, text){
