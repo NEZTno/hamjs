@@ -10,8 +10,9 @@
         this.cookedHam = 0;
         const elements = document.querySelectorAll(parameter);
         console.log("Garry found " + elements.length + " pig(s)");
-        for(var i=0;i<elements.length;i++)
+        for(var i=0;i<elements.length;i++){
             this.pigs.push(elements[i]);
+        }
         return this;
     }
 
@@ -55,12 +56,14 @@
                 console.log(this.pigs[i])
                 this.pigs[i].style.display = 'block';
             }
+            return this;
         },
         piggyBath: function(){
             console.log("Garry gives his pigs a nice bath");
             for (var i = 0; i < this.pigs.length; i++) {
                 this.pigs[i].innerHTML = "";
             }
+            return this;
         },
         throwDirt: function(parameter, text){
             if(text){
