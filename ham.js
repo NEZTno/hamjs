@@ -7,6 +7,9 @@
 
     var Library = function(parameter){
         var elements = document.querySelectorAll(parameter);
+        for(var i=0;i<elements.length;i++){
+            console.log(elements[i]);
+        }
         this.pigs = elements.length;
         this.cookedHam = 0;
         console.log("Garry found " + elements.length + " pig(s)");
@@ -35,6 +38,9 @@
         },
         hunt: function(parameter){
             var hunting = document.querySelectorAll(parameter);
+            for(var i=0;i<hunting.length;i++){
+                console.log(hunting[i]);
+            }
             this.pigs += hunting.length;
             console.log("Garry slaugthered " + hunting.length + " pig(s)");
             return this;
